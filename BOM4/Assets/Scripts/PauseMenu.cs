@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool Paused = false;
     public GameObject PauseMenuCanvas;
+    
 
     void Start()
     {
@@ -30,20 +31,22 @@ public class PauseMenu : MonoBehaviour
 
     void Stop()
     {
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
         PauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
         Paused = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
     public void Play()
     {
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         PauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         Paused = false;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void MainMenuButton()
