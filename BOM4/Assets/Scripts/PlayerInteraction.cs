@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public float interactionDistance = 2f;
+    public Image Crosshair;
+    public Color Interaction = Color.green;
+    public Color NotInteraction = Color.black;
 
     private void Update()
     {
@@ -21,12 +25,21 @@ public class PlayerInteraction : MonoBehaviour
             {
                 //Debug.Log("Looking at " + interactableObject.objectName);
                 //Debug.Log(interactableObject.interactionPrompt);
+                Crosshair.color = Interaction;
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactableObject.Interact();
                 }
             }
+            else
+            {
+                Crosshair.color = NotInteraction;
+            }
+        }
+        else
+        {
+            Crosshair.color = NotInteraction;
         }
     }
 }
