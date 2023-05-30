@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-
+    public oxygen Oxygen;
     public virtual void Interact()
     {
-        Debug.Log("Test");
+        Oxygen.oxygenLevel = Oxygen.oxygenLevel + 10;
     }
 }

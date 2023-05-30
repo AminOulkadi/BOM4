@@ -9,13 +9,12 @@ public class InteractableObject : MonoBehaviour
 
     private void Start()
     {
-        // Find the component by its script name
+
         interactableObject = GetComponent(scriptname) as MonoBehaviour;
 
-        // Check if the component is found
         if (interactableObject == null)
         {
-            Debug.LogError("Failed to find component with name: " + scriptname);
+            Debug.LogError("Failed" + scriptname);
         }
     }
 
@@ -23,14 +22,14 @@ public class InteractableObject : MonoBehaviour
     {
         Debug.Log("Interacting with " + scriptname);
 
-        // Check if interactableObject is null before calling its Interact method
+
         if (interactableObject != null)
         {
             interactableObject.Invoke("Interact", 0f);
         }
         else
         {
-            Debug.LogError("interactableObject is null. Make sure the component is found and attached to the GameObject.");
+            Debug.LogError("interactableObject is null");
         }
     }
 }
