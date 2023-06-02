@@ -35,7 +35,7 @@ public class oxygen : MonoBehaviour
         }
 
         Color currentColor = overlayImage.color;
-        float alpha = Mathf.MoveTowards(currentColor.a, targetAlpha, 0.25f * Time.deltaTime);
+        float alpha = Mathf.MoveTowards(currentColor.a, targetAlpha, 0.13f * Time.deltaTime);
         overlayImage.color = new Color(0f, 0f, 0f, alpha);
         
     }
