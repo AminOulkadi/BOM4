@@ -20,7 +20,6 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
             InteractableObject interactableObject = hit.collider.GetComponent<InteractableObject>();
-
             if (interactableObject != null)
             {
                 //Debug.Log("Looking at " + interactableObject.objectName);
