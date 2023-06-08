@@ -7,6 +7,6 @@ public class NewBehaviourScript : MonoBehaviour
     public oxygen Oxygen;
     public virtual void Interact()
     {
-        Oxygen.oxygenLevel = Oxygen.oxygenLevel + 10;
+        Oxygen.oxygenLevel = Mathf.Min(Oxygen.oxygenLevel + 10,30);
     }
 }
