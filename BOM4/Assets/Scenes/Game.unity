@@ -1362,7 +1362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b1b4295e05b7347a83b5eba8cb52db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Paused: 0
   PauseMenuCanvas: {fileID: 672498714}
+  Computer: {fileID: 2079968210}
 --- !u!1 &1274687589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2404,7 @@ MonoBehaviour:
   Crosshair: {fileID: 1279212713}
   Interaction: {r: 0, g: 1, b: 0, a: 1}
   NotInteraction: {r: 0, g: 0, b: 0, a: 1}
+  MenuManager: {fileID: 1273518740}
 --- !u!114 &2053482586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2598,6 +2601,7 @@ MonoBehaviour:
   cam1: {fileID: 2120762631}
   target: {fileID: 1024179653}
   speed: 5
+  MenuManager: {fileID: 1273518740}
 --- !u!1 &2120762629
 GameObject:
   m_ObjectHideFlags: 0

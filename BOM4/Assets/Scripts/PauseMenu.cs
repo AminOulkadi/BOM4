@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool Paused = false;
+    public bool Paused = false;
     public GameObject PauseMenuCanvas;
-    
+    public GameObject Computer;
+
 
     void Start()
     {
@@ -41,12 +42,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Play()
     {
-        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+        if (!Computer.GetComponent<Computer>().ScreenOpen)
+        {
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         PauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         Paused = false;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     public void MainMenuButton()

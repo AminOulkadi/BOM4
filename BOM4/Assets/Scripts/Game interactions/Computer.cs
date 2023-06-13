@@ -9,6 +9,7 @@ public class Computer : MonoBehaviour
     public Camera cam1;
     public Transform target;
     public float speed = 5f;
+    public GameObject MenuManager;
 
     private Vector3 startingPosition;
     private Quaternion startingRotation;
@@ -20,16 +21,20 @@ public class Computer : MonoBehaviour
             ComputerUI.SetActive(true);
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             ScreenOpen = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             StartCoroutine(LerpToTarget());
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && ScreenOpen)
+        if (Input.GetKeyDown(KeyCode.E) && ScreenOpen && !MenuManager.GetComponent<PauseMenu>().Paused)
         {
             ComputerUI.SetActive(false);
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             StartCoroutine(ReturnToOriginalPosition());
             Invoke("DelayedAction", 0.1f);
         }
