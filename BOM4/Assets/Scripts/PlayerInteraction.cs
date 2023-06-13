@@ -9,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     public Image Crosshair;
     public Color Interaction = Color.green;
     public Color NotInteraction = Color.black;
+    public GameObject MenuManager;
 
     private void Update()
     {
@@ -28,7 +29,10 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    interactableObject.Interact();
+                    if (!MenuManager.GetComponent<PauseMenu>().Paused)
+                    {
+                        interactableObject.Interact();
+                    }
                 }
             }
             else
