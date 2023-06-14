@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class oxygen : MonoBehaviour
@@ -10,6 +11,7 @@ public class oxygen : MonoBehaviour
     bool done = false;
     public Image overlayImage;
     private float targetAlpha = 0f;
+    public GameObject DeathScreen;
 
     private void Start()
     {
@@ -26,8 +28,16 @@ public class oxygen : MonoBehaviour
 
             if (oxygenLevel < 1)
             {
-                
-                done = true; 
+
+                done = true;
+
+                GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+                GameObject.Find("Player").GetComponent<PlayerInteraction>().enabled = false;
+                GameObject.Find("MenuManager").GetComponent<PauseMenu>().enabled = false;
+
+                DeathScreen.SetActive(true);
+                Invoke("DelayedAction", 5f);
+
             }
             targetAlpha = (10 - oxygenLevel) / 10;
             targetAlpha = Mathf.Clamp01(targetAlpha);
@@ -40,6 +50,12 @@ public class oxygen : MonoBehaviour
         
     }
 
+    private void DelayedAction()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
     public virtual void Interact()
     {
         Debug.Log("Test");
