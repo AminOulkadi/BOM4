@@ -16,6 +16,8 @@ public class oxygen : MonoBehaviour
     private void Start()
     {
         overlayImage.color = Color.clear;
+        DeathScreen.SetActive(false);
+
     }
 
     void Update()
