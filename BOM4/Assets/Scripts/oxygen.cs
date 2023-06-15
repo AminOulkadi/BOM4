@@ -16,6 +16,7 @@ public class oxygen : MonoBehaviour
     private void Start()
     {
         overlayImage.color = Color.clear;
+
     }
 
     void Update()
@@ -28,7 +29,7 @@ public class oxygen : MonoBehaviour
 
             if (oxygenLevel < 1)
             {
-                
+
                 done = true;
 
                 GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
@@ -37,6 +38,7 @@ public class oxygen : MonoBehaviour
 
                 DeathScreen.SetActive(true);
                 Invoke("DelayedAction", 5f);
+
             }
             targetAlpha = (10 - oxygenLevel) / 10;
             targetAlpha = Mathf.Clamp01(targetAlpha);
@@ -48,7 +50,16 @@ public class oxygen : MonoBehaviour
         overlayImage.color = new Color(0f, 0f, 0f, alpha);
         
     }
+
+
     private void DelayedAction()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+    public virtual void Interact()
+
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
