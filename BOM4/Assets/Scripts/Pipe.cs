@@ -19,11 +19,6 @@ public class Pipe : MonoBehaviour
             boolList.Add(false);
         }
 
-        foreach (bool value in boolList)
-        {
-            Debug.Log(value);
-        }
-
         Invoke("RandomFunction", GetRandomDelay());
     }
 
@@ -37,17 +32,20 @@ public class Pipe : MonoBehaviour
                 falseIndices.Add(i);
             }
         }
-        System.Random random = new System.Random();
-        int randomIndex = falseIndices[random.Next(0, falseIndices.Count)];
-        boolList[randomIndex] = true;
-        GameObject randompipe = taggedObjects[randomIndex];
-        //Code here (randompipe)
-        Vector3 pos = randompipe.transform.position;
+        if(falseIndices.Count > 0)
+        {
+            System.Random random = new System.Random();
+            int randomIndex = falseIndices[random.Next(0, falseIndices.Count)];
+            boolList[randomIndex] = true;
+            GameObject randompipe = taggedObjects[randomIndex];
+            randompipe.GetComponent<ParticleSystem>().Play();
+            InteractableObject interactableObject = randompipe.AddComponent<InteractableObject>();
+            interactableObject.scriptname = "BrokenPipe";
+            //Code here (randompipe)
+            Vector3 pos = randompipe.transform.position;
+        }
 
-
-
-
-        Debug.Log("Random function called!");
+        //Debug.Log("Random function called!");
 
         float delay = GetRandomDelay();
         Invoke("RandomFunction", delay);

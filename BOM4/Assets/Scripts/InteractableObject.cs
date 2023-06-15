@@ -20,7 +20,7 @@ public class InteractableObject : MonoBehaviour
 
     public virtual void Interact()
     {
-        Debug.Log("Interacting with " + scriptname);
+        //Debug.Log("Interacting with " + scriptname);
 
 
         if (interactableObject != null)
