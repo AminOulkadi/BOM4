@@ -1,0 +1,25 @@
+{
+    "Dialog": [
+      {
+        "Question": "Big or small",
+        "Answer0": "Big",
+        "Answer1": "Small",
+        "If0GoTo": 1,
+        "If1GoTo": 2
+      },
+      {
+        "Question": "bruh",
+        "Answer0": "Big",
+        "Answer1": "Small",
+        "If0GoTo": 1,
+        "If1GoTo": 2
+      },
+      {
+        "Question": "0_o",
+        "Answer0": "Big",
+        "Answer1": "Small",
+        "If0GoTo": 1,
+        "If1GoTo": 2
+      }
+    ]
+  }
