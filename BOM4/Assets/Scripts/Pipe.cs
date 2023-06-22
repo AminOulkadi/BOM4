@@ -39,6 +39,10 @@ public class Pipe : MonoBehaviour
             boolList[randomIndex] = true;
             GameObject randompipe = taggedObjects[randomIndex];
             randompipe.GetComponent<ParticleSystem>().Play();
+
+            randompipe.GetComponent<AudioSource>().Play();
+
+
             InteractableObject interactableObject = randompipe.AddComponent<InteractableObject>();
             interactableObject.scriptname = "BrokenPipe";
             //Code here (randompipe)
