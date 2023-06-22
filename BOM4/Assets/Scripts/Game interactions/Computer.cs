@@ -13,12 +13,14 @@ public class Computer : MonoBehaviour
 
     private Vector3 startingPosition;
     private Quaternion startingRotation;
+    private bool Done = false;
+
 
     public virtual void Interact()
     {
-        if (!ScreenOpen)
+        if (!ScreenOpen && !Done)
         {
-            ComputerUI.SetActive(true);
+            
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             ScreenOpen = true;
             Cursor.lockState = CursorLockMode.None;
@@ -29,10 +31,9 @@ public class Computer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && ScreenOpen && !MenuManager.GetComponent<PauseMenu>().Paused)
+        if (Input.GetKeyDown(KeyCode.E) && ScreenOpen && !MenuManager.GetComponent<PauseMenu>().Paused && Done)
         {
             ComputerUI.SetActive(false);
-            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             StartCoroutine(ReturnToOriginalPosition());
@@ -44,6 +45,7 @@ public class Computer : MonoBehaviour
     private void DelayedAction()
     {
         ScreenOpen = false;
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
     }
 
     private IEnumerator LerpToTarget()
@@ -60,6 +62,8 @@ public class Computer : MonoBehaviour
 
             yield return null;
         }
+        Done = true;
+        ComputerUI.SetActive(true);
     }
 
     private IEnumerator ReturnToOriginalPosition()
@@ -76,5 +80,6 @@ public class Computer : MonoBehaviour
 
             yield return null;
         }
+        Done = false;
     }
 }

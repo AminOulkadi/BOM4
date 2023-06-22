@@ -13,7 +13,7 @@ public class DataReader : MonoBehaviour
     private int AtQuestion = 0;
     private bool canInteract = false;
 
-    public float delayTime = 20f;
+    public float TimeToNextQuestion = 30f;
     public Slider delayBar;
     private float currentTime = 0f;
     private bool isDelaying = false;
@@ -66,10 +66,11 @@ public class DataReader : MonoBehaviour
     {
         if (isDelaying)
         {
+            
             currentTime += Time.deltaTime;
-            delayBar.value = currentTime / delayTime;
+            delayBar.value = currentTime / TimeToNextQuestion;
 
-            if (currentTime >= delayTime)
+            if (currentTime >= TimeToNextQuestion)
             {
                 currentTime = 0f;
                 isDelaying = false;

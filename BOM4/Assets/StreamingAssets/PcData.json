@@ -1,25 +1,151 @@
 {
-    "Dialog": [
-      {
-        "Question": "Big or small",
-        "Answer0": "Big",
-        "Answer1": "Small",
-        "If0GoTo": 1,
-        "If1GoTo": 2
-      },
-      {
-        "Question": "bruh",
-        "Answer0": "Big",
-        "Answer1": "Small",
-        "If0GoTo": 1,
-        "If1GoTo": 2
-      },
-      {
-        "Question": "0_o",
-        "Answer0": "Big",
-        "Answer1": "Small",
-        "If0GoTo": 1,
-        "If1GoTo": 2
-      }
-    ]
+  "Dialog": [
+  {
+  "Question": "It there anyone out there?",
+  "Answer0": "Yes",
+  "Answer1": "Yes, but I'm hurt",
+  "If0GoTo": 1,
+  "If1GoTo": 2
+  },
+  {
+  "Question": "What's your location?",
+  "Answer0": "Sector A-12",
+  "Answer1": "Sector B-7",
+  "If0GoTo": 3,
+  "If1GoTo": 3
+  },
+  {
+  "Question": "Are there any survivors?",
+  "Answer0": "Yes, a few of us managed to escape",
+  "Answer1": "No, we're the only ones left",
+  "If0GoTo": 4,
+  "If1GoTo": 5
+  },
+  {
+  "Question": "Can you provide any assistance?",
+  "Answer0": "We have medical supplies and weapons",
+  "Answer1": "We're low on resources, but we'll do what we can",
+  "If0GoTo": 6,
+  "If1GoTo": 7
+  },
+  {
+  "Question": "How do we get out of here?",
+  "Answer0": "There's an emergency escape pod in the control room",
+  "Answer1": "You'll need to override the security systems to access the main hangar",
+  "If0GoTo": 8,
+  "If1GoTo": 9
+  },
+  {
+  "Question": "What's the situation outside?",
+  "Answer0": "The ship is overrun with zombies, proceed with caution",
+  "Answer1": "It seems relatively clear, but be prepared for any surprises",
+  "If0GoTo": 10,
+  "If1GoTo": 10
+  },
+  {
+  "Question": "Do you have any escape plans?",
+  "Answer0": "We're working on a plan to reach a nearby space station",
+  "Answer1": "We're trying to repair the engines and fly to a safe zone",
+  "If0GoTo": 11,
+  "If1GoTo": 12
+  },
+  {
+  "Question": "Is there any way to communicate with other ships?",
+  "Answer0": "We've lost contact with most ships, but we'll keep trying",
+  "Answer1": "Yes, we're in touch with a few other surviving ships",
+  "If0GoTo": 13,
+  "If1GoTo": 14
+  },
+  {
+  "Question": "Have you found a cure for the infection?",
+  "Answer0": "Not yet, but our scientists are working on it",
+  "Answer1": "Unfortunately, no progress has been made so far",
+  "If0GoTo": 15,
+  "If1GoTo": 15
+  },
+  {
+  "Question": "What's the status of the ship's systems?",
+  "Answer0": "Most systems are damaged, but life support is functioning",
+  "Answer1": "We've managed to restore power to critical systems",
+  "If0GoTo": 16,
+  "If1GoTo": 16
+  },
+  {
+  "Question": "Are there any safe zones on the ship?",
+  "Answer0": "We've secured a few areas, but they're limited",
+  "Answer1": "No, the ship is completely compromised",
+  "If0GoTo": 17,
+  "If1GoTo": 17
+  },
+  {
+  "Question": "Do you have any suggestions for survival?",
+  "Answer0": "Stay hidden, conserve resources, and find a way off the ship",
+  "Answer1": "Stick together, barricade rooms, and be ready to fight",
+  "If0GoTo": 18,
+  "If1GoTo": 18
+  },
+  {
+  "Question": "Is there anything else we should know?",
+  "Answer0": "Beware of the captain, they've been infected",
+  "Answer1": "There's a secret passage in the crew quarters",
+  "If0GoTo": 19,
+  "If1GoTo": 20
+  },
+  {
+  "Question": "How long do we have until the zombies breach the room?",
+  "Answer0": "Approximately 15 minutes, you need to act quickly",
+  "Answer1": "You have about 5 minutes, time is running out",
+  "If0GoTo": 21,
+  "If1GoTo": 22
+  },
+  {
+  "Question": "Can you send us the ship's schematics?",
+  "Answer0": "We're transmitting the schematics to your console",
+  "Answer1": "Sorry, our systems are too compromised to send files",
+  "If0GoTo": 23,
+  "If1GoTo": 23
+  },
+  {
+  "Question": "What's your plan for the future?",
+  "Answer0": "We're focused on survival and finding a new home",
+  "Answer1": "Our goal is to gather survivors and establish a colony",
+  "If0GoTo": 24,
+  "If1GoTo": 24
+  },
+  {
+  "Question": "How can we trust you?",
+  "Answer0": "We can arrange a rendezvous and exchange survivors",
+  "Answer1": "Trust is essential in this situation, we need to stick together",
+  "If0GoTo": 25,
+  "If1GoTo": 25
+  },
+  {
+  "Question": "What's the status of your crew?",
+  "Answer0": "We've lost some members, but we're holding on",
+  "Answer1": "We're all still here, fighting to survive",
+  "If0GoTo": 26,
+  "If1GoTo": 26
+  },
+  {
+  "Question": "Can you provide any information on the origin of the outbreak?",
+  "Answer0": "It's believed to have started from an infected sample brought on board",
+  "Answer1": "We're not sure, but it may have originated from a research facility",
+  "If0GoTo": 27,
+  "If1GoTo": 27
+  },
+  {
+  "Question": "What's the best route to the control room?",
+  "Answer0": "Take the left corridor, then turn right at the junction",
+  "Answer1": "Go straight ahead, but watch out for zombie hordes",
+  "If0GoTo": 28,
+  "If1GoTo": 28
+  },
+  {
+  "Question": "How many zombies are there on your ship?",
+  "Answer0": "We estimate there are hundreds, maybe even thousands",
+  "Answer1": "It's hard to tell, but there are definitely a significant number",
+  "If0GoTo": 28,
+  "If1GoTo": 28
   }
+]
+}
