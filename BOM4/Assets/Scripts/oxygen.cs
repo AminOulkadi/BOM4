@@ -21,6 +21,8 @@ public class oxygen : MonoBehaviour
 
     void Update()
     {
+
+
         if (Time.time >= nextTime && !done)
         {
             nextTime = Time.time + 1;
