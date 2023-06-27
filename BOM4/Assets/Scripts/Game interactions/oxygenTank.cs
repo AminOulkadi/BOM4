@@ -11,6 +11,8 @@ public class oxygenTank : MonoBehaviour
         if (!Pipes.GetComponent<Pipe>().boolList.Contains(true))
         {
             Oxygen.oxygenLevel = Mathf.Min(Oxygen.oxygenLevel + 10, 30);
+            Oxygen.GetComponent<AudioSource>().Play();
+
         }
         else
         {

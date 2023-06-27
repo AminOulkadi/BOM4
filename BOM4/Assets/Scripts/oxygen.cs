@@ -27,6 +27,7 @@ public class oxygen : MonoBehaviour
         {
             nextTime = Time.time + 1;
             oxygenLevel = oxygenLevel - 1;
+            
             //Debug.Log(oxygenLevel);
 
             if (oxygenLevel < 1)
