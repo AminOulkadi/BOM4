@@ -4842,6 +4842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pipes: {fileID: 0}
   whatpipe: 0
+  fixsound: {fileID: 0}
 --- !u!82 &7067391411693224902
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4854,7 +4855,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 39424086348ee044683183a841f9c632, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.003
+  m_Volume: 0.148
   m_Pitch: 1
   Loop: 0
   Mute: 0

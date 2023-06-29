@@ -8,6 +8,7 @@ public class DataReader : MonoBehaviour
     public TMP_Text QuestionText;
     public TMP_Text AnswerText0;
     public TMP_Text AnswerText1;
+    public GameObject Done;
 
     private DialogData dialogData;
     private int AtQuestion = 0;
@@ -75,6 +76,7 @@ public class DataReader : MonoBehaviour
                 currentTime = 0f;
                 isDelaying = false;
                 SetText();
+                Done.GetComponent<AudioSource>().Play();
             }
         }
     }
