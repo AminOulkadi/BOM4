@@ -20,9 +20,8 @@ public class Computer : MonoBehaviour
     {
         if (!ScreenOpen && !Done)
         {
-            
-            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             ScreenOpen = true;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             StartCoroutine(LerpToTarget());
@@ -33,20 +32,16 @@ public class Computer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && ScreenOpen && !MenuManager.GetComponent<PauseMenu>().Paused && Done)
         {
+            ScreenOpen = false;
             ComputerUI.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             StartCoroutine(ReturnToOriginalPosition());
-            Invoke("DelayedAction", 0.1f);
+            
         }
 
     }
 
-    private void DelayedAction()
-    {
-        ScreenOpen = false;
-        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
-    }
 
     private IEnumerator LerpToTarget()
     {
@@ -62,8 +57,8 @@ public class Computer : MonoBehaviour
 
             yield return null;
         }
-        Done = true;
         ComputerUI.SetActive(true);
+        Done = true;
     }
 
     private IEnumerator ReturnToOriginalPosition()
@@ -80,6 +75,7 @@ public class Computer : MonoBehaviour
 
             yield return null;
         }
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         Done = false;
     }
 }

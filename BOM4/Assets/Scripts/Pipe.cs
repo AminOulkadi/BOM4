@@ -8,11 +8,16 @@ public class Pipe : MonoBehaviour
     public float minDelay = 1f;
     public float maxDelay = 3f;
 
+    public GameObject Pipe0;
+    public GameObject Pipe1;
+    public GameObject Pipe2;
+    public GameObject Pipe3;
+
     private GameObject[] taggedObjects;
 
     private void Start()
     {
-        taggedObjects = GameObject.FindGameObjectsWithTag(tagToFind);
+        taggedObjects = new GameObject[] { Pipe0, Pipe1, Pipe2, Pipe3 };
 
         foreach (GameObject obj in taggedObjects)
         {
